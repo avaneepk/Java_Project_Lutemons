@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_home.xml -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lutemon_green">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="?attr/materialToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Home" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav">
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/lutemon_green"
+        app:labelVisibilityMode="selected"
+        app:layout_anchorGravity="bottom"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <LinearLayout
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="353dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_anchor="@+id/card_container"
+        app:layout_anchorGravity="bottom|center">
+
+        <!-- Card 1 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_lutedex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/lutemon_accent"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check your Lutemons / View Lutedex"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/status_lutedex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You have total of 5 Lutemons" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 2 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_training"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/lutemon_accent"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Training needed?"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/status_training"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Lutemon currently in training" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 3 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_battle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/lutemon_accent"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Battle Field"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/status_battle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No active battles" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

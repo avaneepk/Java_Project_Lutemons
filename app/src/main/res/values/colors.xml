@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="lutemon_green">#32CD32</color>
+    <color name="lutemon_accent">#FFFFFF</color>
+    <color name="lutemon_black">#000000</color>
+
+    <!-- face presets -->
+    <color name="lutemon_red">#FF5252</color>
+    <color name="lutemon_orange">#FFA500</color>
+    <color name="lutemon_gray">#B0BEC5</color>
+    <color name="lutemon_blue">#1E90FF</color>
 </resources>
