@@ -1,4 +1,4 @@
-package com.example.lutemon;
+package com.example.javaprojectlutemons;
 
 import android.content.Intent;
 import android.os.Bundle;

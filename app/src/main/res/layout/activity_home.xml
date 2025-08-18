@@ -8,10 +8,9 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
-        style="?attr/materialToolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="Home" />
+        android:title="@string/home_title" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -59,7 +58,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Check your Lutemons / View Lutedex"
+                    android:text="@string/lutedex_card_title"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -67,7 +66,7 @@
                     android:id="@+id/status_lutedex"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You have total of 5 Lutemons" />
+                    android:text="@string/lutedex_card_status" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -89,7 +88,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Training needed?"
+                    android:text="@string/training_card_title"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -97,7 +96,7 @@
                     android:id="@+id/status_training"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No Lutemon currently in training" />
+                    android:text="@string/training_card_status" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -118,7 +117,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="View Battle Field"
+                    android:text="@string/battle_card_title"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -126,7 +125,7 @@
                     android:id="@+id/status_battle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No active battles" />
+                    android:text="@string/battle_card_status" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

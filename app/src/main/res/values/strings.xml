@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Java Project Lutemons</string>
+    <string name="lutemon_title">Lutemon</string>
+    <string name="lutemon_subtitle">a student game</string>
+    <string name="logo_content_description">Lutemon logo</string>
+    <string name="home_title">Home</string>
+    <string name="lutedex_card_title">Check your Lutemons / View Lutedex</string>
+    <string name="lutedex_card_status">You have total of 5 Lutemons</string>
+    <string name="training_card_title">Training needed?</string>
+    <string name="training_card_status">No Lutemon currently in training</string>
+    <string name="battle_card_title">View Battle Field</string>
+    <string name="battle_card_status">No active battles</string>
 </resources>
