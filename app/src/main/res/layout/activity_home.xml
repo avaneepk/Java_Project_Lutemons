@@ -50,6 +50,7 @@
             app:cardCornerRadius="16dp">
 
             <LinearLayout
+                android:id="@+id/goToLutedex"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:orientation="vertical"
@@ -80,6 +81,7 @@
             app:cardCornerRadius="16dp">
 
             <LinearLayout
+                android:id="@+id/goToTraining"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:orientation="vertical"
@@ -109,6 +111,7 @@
             app:cardCornerRadius="16dp">
 
             <LinearLayout
+                android:id="@+id/goToBattle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
