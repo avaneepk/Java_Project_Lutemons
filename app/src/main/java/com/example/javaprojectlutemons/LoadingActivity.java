@@ -22,7 +22,7 @@ public class LoadingActivity extends AppCompatActivity {
         timer.schedule(new TimerTask(){
             @Override
             public void run() {
-                Intent intent = new Intent(LoadingActivity.this, com.example.javaprojectlutemons.HomeActivity.class);
+                Intent intent = new Intent(LoadingActivity.this, com.example.lutemon.HomeActivity.class);
                 startActivity(intent);
                 finish();
             }
