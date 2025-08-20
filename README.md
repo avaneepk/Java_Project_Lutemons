@@ -18,7 +18,7 @@ Lutemon is an Android game project inspired by Pokémon-style mechanics. Players
 - **Battlefield**  
   Engage in **turn-based battles** where Lutemons attack and defend until one’s health reaches zero.  
   - **Winner**: Gains XP.  
-  - **Loser**: Removed from the game.  
+  - **Loser**: goes back to Lutedex.  
 
 - **Lutedex**  
   View all Lutemons with images and stats.
