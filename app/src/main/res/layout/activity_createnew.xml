@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/surface_light">
@@ -34,19 +35,20 @@
         android:id="@+id/create_scroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="656dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/battle_box"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/battle_box">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="@dimen/padding_normal"
-            android:paddingRight="@dimen/padding_normal"
             android:paddingTop="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
             android:paddingBottom="@dimen/padding_large">
 
             <!-- NAME -->
@@ -69,8 +71,8 @@
                         android:layout_height="wrap_content"
                         android:text="Lutemon Name"
                         android:textColor="@color/text_dark"
-                        android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <!-- input text area -->
                     <EditText
@@ -79,12 +81,12 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="@dimen/padding_normal"
                         android:background="@drawable/btn_white_round"
+                        android:hint="e.g., Angy"
                         android:paddingLeft="@dimen/padding_normal"
                         android:paddingRight="@dimen/padding_normal"
-                        android:hint="e.g., Angy"
-                        android:textSize="20sp"
                         android:textColor="@color/text_dark"
-                        android:textColorHint="@color/gray" />
+                        android:textColorHint="@color/gray"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -107,8 +109,8 @@
                         android:layout_height="wrap_content"
                         android:text="Choose Color"
                         android:textColor="@color/text_dark"
-                        android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <!-- Faces row (uses layered drawables as src) -->
                     <LinearLayout
@@ -123,50 +125,50 @@
                             android:layout_height="80dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
-                            android:src="@drawable/lutemon_red_face"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
-                            android:contentDescription="@string/cd_lutemon_fire" />
+                            android:contentDescription="@string/cd_lutemon_fire"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lutemon_red_face" />
 
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
-                            android:src="@drawable/lutemon_orange_face"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
-                            android:contentDescription="@string/cd_lutemon_lightning" />
+                            android:contentDescription="@string/cd_lutemon_lightning"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lutemon_orange_face" />
 
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
-                            android:src="@drawable/lutemon_green_face"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
-                            android:contentDescription="@string/cd_lutemon_earth" />
+                            android:contentDescription="@string/cd_lutemon_earth"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lutemon_green_face" />
 
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
-                            android:src="@drawable/lutemon_gray_face"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
-                            android:contentDescription="@string/cd_lutemon_dark" />
+                            android:contentDescription="@string/cd_lutemon_dark"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lutemon_gray_face" />
 
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
-                            android:src="@drawable/lutemon_blue_face"
-                            android:scaleType="fitCenter"
                             android:adjustViewBounds="true"
-                            android:contentDescription="@string/cd_lutemon_water" />
+                            android:contentDescription="@string/cd_lutemon_water"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lutemon_blue_face" />
                     </LinearLayout>
 
                     <!-- Select boxes directly under faces -->
@@ -174,9 +176,9 @@
                         android:id="@+id/color_group"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
                         android:layout_marginTop="@dimen/padding_medium"
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:weightSum="5">
 
                         <RadioButton
@@ -204,9 +206,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:checked="true"
                             android:gravity="center"
                             android:text="Green"
-                            android:checked="true"
                             android:textSize="16sp"
                             app:buttonTint="@color/primaryGreen" />
 
@@ -243,9 +245,9 @@
                 android:gravity="center"
                 android:text="@string/home_card4_btn"
                 android:textAllCaps="false"
-                android:textStyle="bold"
                 android:textColor="@color/surface_white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
     <!-- <<< end of form -->

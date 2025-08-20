@@ -41,6 +41,9 @@
             android:name=".BattleFieldActivity"
             android:exported="false" />
         <activity
+            android:name=".CreateLutemonActivity"
+            android:exported="false" />
+        <activity
             android:name=".CurvedTextView"
             android:exported="false"
             tools:ignore="Instantiatable" />

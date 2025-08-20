@@ -37,7 +37,6 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/home_box"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_holder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -89,12 +88,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginTop="@dimen/padding_medium"
-                        android:background="@color/accentOrange"
+                        android:background="#26645E"
                         android:text="@string/home_card1_btn"
                         android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textColor="@color/surface_white"
-                        android:textSize="16sp" />
+                        android:textColor="#ffffff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
