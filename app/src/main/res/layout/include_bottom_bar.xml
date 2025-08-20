@@ -18,40 +18,40 @@
 
     <ImageButton
         android:id="@+id/btn_back"
-        android:layout_width="@dimen/icon_size_32"
-        android:layout_height="@dimen/icon_size_32"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="@dimen/padding_large"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/cd_back"
-        android:tint="@color/icon_white"
         android:src="@drawable/ic_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/icon_white" />
 
     <ImageButton
         android:id="@+id/btn_home"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_home"
         android:src="@drawable/ic_ball"
-        android:tint="@color/icon_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/icon_white" />
 
     <ImageButton
         android:id="@+id/btn_settings"
-        android:layout_width="@dimen/icon_size_32"
-        android:layout_height="@dimen/icon_size_32"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="@dimen/padding_large"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/cd_settings"
-        android:tint="@color/icon_white"
         android:src="@drawable/ic_settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/icon_white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

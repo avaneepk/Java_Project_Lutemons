@@ -37,6 +37,7 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/home_box"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_holder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -244,16 +245,15 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom bar -->
-    <FrameLayout
+    <!-- Bottom navigation (unchanged) -->
+    <include
         android:id="@+id/bottom_bar_holder"
+        layout="@layout/include_bottom_bar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/bottom_bar_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <include layout="@layout/include_bottom_bar" />
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

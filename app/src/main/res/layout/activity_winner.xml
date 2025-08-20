@@ -24,6 +24,8 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Winner"
+            android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/surface_white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -50,6 +52,7 @@
             android:paddingBottom="@dimen/padding_large">
 
             <!-- Winner card -->
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -169,6 +172,19 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_end_battle2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:background="@color/accentOrange"
+                android:gravity="center"
+                android:text="@string/cd_home"
+                android:textAllCaps="false"
+                android:textColor="@color/surface_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
     <!-- Bottom bar -->

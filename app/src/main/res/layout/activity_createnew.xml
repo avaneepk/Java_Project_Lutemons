@@ -31,25 +31,30 @@
     </androidx.cardview.widget.CardView>
 
     <!-- >>> THIS is the form you wanted (name -> faces -> select boxes -> Create) -->
+    <!-- <<< end of form -->
+
+    <!-- Bottom navigation (unchanged) -->
+
     <ScrollView
         android:id="@+id/create_scroll"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="656dp"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/battle_box">
+        app:layout_constraintTop_toTopOf="@+id/battle_box"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_holder">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:orientation="vertical"
             android:paddingLeft="@dimen/padding_normal"
-            android:paddingTop="@dimen/padding_normal"
+            android:paddingTop="1dp"
             android:paddingRight="@dimen/padding_normal"
-            android:paddingBottom="@dimen/padding_large">
+            tools:layout_editor_absoluteX="0dp">
 
             <!-- NAME -->
             <androidx.cardview.widget.CardView
@@ -206,7 +211,6 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:checked="true"
                             android:gravity="center"
                             android:text="Green"
                             android:textSize="16sp"
@@ -250,15 +254,14 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
-    <!-- <<< end of form -->
 
-    <!-- BOTTOM BAR (leave as-is) -->
     <include
-        android:id="@+id/bottomBar"
+        android:id="@+id/bottom_bar_holder"
         layout="@layout/include_bottom_bar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_bar_height"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
