@@ -1,12 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="lutemon_green">#32CD32</color>
-    <color name="lutemon_accent">#FFFFFF</color>
-    <color name="lutemon_black">#000000</color>
+    <color name="primaryGreen">#34C759</color>
+    <color name="accentRed">#FF3B30</color>
+    <color name="accentOrange">#FF9500</color>
+    <color name="accentBlue">#007AFF</color>
+    <color name="gray">#6D6D72</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="surface_light">#F2F2F7</color>
+    <color name="text_dark">#0A0A0A</color>
 
-    <!-- face presets -->
-    <color name="lutemon_red">#FF5252</color>
-    <color name="lutemon_orange">#FFA500</color>
-    <color name="lutemon_gray">#B0BEC5</color>
-    <color name="lutemon_blue">#1E90FF</color>
+    <!-- icon tint helpers -->
+    <color name="icon_white">#FFFFFFFF</color>
+    <color name="icon_black">#FF000000</color>
+    <!-- Basic Palette -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Semantic Colors (Optional but recommended) -->
+    <!-- These give meaning to your basic palette colors -->
+    <color name="colorPrimary">@color/purple_500</color>
+    <color name="colorPrimaryVariant">@color/purple_700</color>
+    <color name="colorOnPrimary">@color/white</color>
+
+    <color name="colorSecondary">@color/teal_200</color>
+    <color name="colorSecondaryVariant">@color/teal_700</color>
+    <color name="colorOnSecondary">@color/black</color>
+
+    <color name="statusBarColor">?attr/colorPrimaryVariant</color>
+    <color name="backgroundColor">@color/white</color>
+    <color name="surfaceColor">@color/white</color>
+    <color name="errorColor">#B00020</color>
+
+    <color name="textColorPrimary">@color/black</color>
+    <color name="textColorSecondary">#757575</color>
 </resources>

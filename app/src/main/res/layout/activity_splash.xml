@@ -6,47 +6,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lutemon_green">
+    android:background="@color/primaryGreen">
 
     <!-- logo -->
+    <!-- upper text -->
     <ImageView
         android:id="@+id/logo_ball"
-        android:layout_width="222dp"
-        android:layout_height="225dp"
-        android:src="@drawable/ic_logo"
+        android:layout_width="251dp"
+        android:layout_height="241dp"
         android:contentDescription="@string/logo_content_description"
+        android:src="@drawable/ic_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
 
-    <!-- upper curved text -->
-    <com.example.javaprojectlutemons.CurvedTextView
+    <TextView
         android:id="@+id/tv_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lutemon_title"
+        android:text="@string/splash_title"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="@color/lutemon_black"
-        app:isTop="true"
-        app:radius="160dp"
+        android:textColor="@color/text_dark"
         app:layout_constraintBottom_toTopOf="@id/logo_ball"
-        app:layout_constraintStart_toStartOf="@id/logo_ball"
-        app:layout_constraintEnd_toEndOf="@id/logo_ball"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- lower curved text -->
-    <com.example.javaprojectlutemons.CurvedTextView
+    <!-- lower text -->
+    <TextView
         android:id="@+id/tv_bottom"
-        android:layout_width="244dp"
-        android:layout_height="252dp"
-        android:text="@string/lutemon_subtitle"
-        android:textColor="@color/lutemon_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_2"
+        android:textColor="@color/text_dark"
         android:textSize="24sp"
-        app:isTop="false"
-        app:layout_constraintEnd_toEndOf="@id/logo_ball"
-        app:layout_constraintStart_toStartOf="@id/logo_ball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo_ball"
-        app:radius="160dp" />
+        android:layout_marginTop="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

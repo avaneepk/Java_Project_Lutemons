@@ -1,33 +1,350 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/activity_lutedex.xml -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/lutemon_green"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/surface_light">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
+    <!-- HEADER BOX: Lutedex -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/lutedex_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="Lutedex"/>
+        android:layout_marginHorizontal="@dimen/padding_normal"
+        android:layout_marginTop="@dimen/padding_normal"
+        app:cardBackgroundColor="@color/primaryGreen"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_lutedex"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/title_lutedex"
+            android:textColor="@color/surface_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Scrollable list below the header and above the bottom nav -->
+    <ScrollView
+        android:id="@+id/lutedex_scroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/lutedex_box"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_nav_menu"
-        android:backgroundTint="@color/lutemon_green"
-        app:labelVisibilityMode="selected"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_normal">
+            <!-- ANGY (red) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_normal">
+
+                <!-- pill -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="999dp"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:paddingBottom="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingStart="96dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lutemon_angy"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Main element: Fire&#10;Attack: 7/10&#10;Defense: 3/10&#10;Exp: 0"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- face with shadow -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/face_size_medium"
+                    android:layout_height="@dimen/face_size_medium"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    app:cardCornerRadius="999dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lutemon_red_face"
+                        android:contentDescription="@string/cd_lutemon_angy" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+
+            <!-- FIGHTER (orange) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_normal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="999dp"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:paddingBottom="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingStart="96dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lutemon_fighter"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Main element: Earth&#10;Attack: 8/10&#10;Defense: 5/10&#10;Exp: 3"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- This is the corrected section for the face image -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/face_size_medium"
+                    android:layout_height="@dimen/face_size_medium"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    app:cardCornerRadius="999dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lutemon_orange_face"
+                        android:contentDescription="@string/cd_lutemon_fighter" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <!-- WORMING (green) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_normal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="999dp"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:paddingBottom="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingStart="96dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lutemon_worming"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Main element: Earth&#10;Attack: 3/10&#10;Defense: 5/10&#10;Exp: 1"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/face_size_medium"
+                    android:layout_height="@dimen/face_size_medium"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    app:cardCornerRadius="999dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lutemon_green_face"
+                        android:contentDescription="@string/cd_lutemon_worming" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <!-- SHADY (gray) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_normal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="999dp"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:paddingBottom="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingStart="96dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lutemon_shady"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Main element: Air&#10;Attack: 7/10&#10;Defense: 9/10&#10;Exp: 2"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/face_size_medium"
+                    android:layout_height="@dimen/face_size_medium"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    app:cardCornerRadius="999dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lutemon_gray_face"
+                        android:contentDescription="@string/cd_lutemon_shady" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <!-- BLUE (optional Ranger) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_large">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="999dp"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/padding_normal"
+                        android:paddingBottom="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingStart="96dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ranger"
+                            android:textColor="@color/text_dark"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Main element: Water&#10;Attack: 6/10&#10;Defense: 4/10&#10;Exp: 0"
+                            android:textColor="@color/text_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/face_size_medium"
+                    android:layout_height="@dimen/face_size_medium"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    app:cardCornerRadius="999dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="@dimen/elevation_card">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/lutemon_blue_face"
+                        android:contentDescription="@string/cd_lutemon_ranger" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom navigation (unchanged) -->
+    <include
+        android:id="@+id/bottomBar"
+        layout="@layout/include_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_bar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

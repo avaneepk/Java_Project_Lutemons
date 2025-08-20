@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_light">
+
+    <!-- HEADER: Create New Lutemons -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/battle_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_normal"
+        android:layout_marginTop="@dimen/padding_normal"
+        app:cardBackgroundColor="@color/primaryGreen"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Create New Lutemons"
+            android:textColor="@color/surface_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- >>> THIS is the form you wanted (name -> faces -> select boxes -> Create) -->
+    <ScrollView
+        android:id="@+id/create_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/battle_box"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingBottom="@dimen/padding_large">
+
+            <!-- NAME -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_normal"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_large">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lutemon Name"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <!-- input text area -->
+                    <EditText
+                        android:id="@+id/input_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        android:background="@drawable/btn_white_round"
+                        android:paddingLeft="@dimen/padding_normal"
+                        android:paddingRight="@dimen/padding_normal"
+                        android:hint="e.g., Angy"
+                        android:textSize="20sp"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="@color/gray" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- COLORS -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_large">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Choose Color"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <!-- Faces row (uses layered drawables as src) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_normal"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lutemon_red_face"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/cd_lutemon_fire" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lutemon_orange_face"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/cd_lutemon_lightning" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lutemon_green_face"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/cd_lutemon_earth" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lutemon_gray_face"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/cd_lutemon_dark" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/lutemon_blue_face"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/cd_lutemon_water" />
+                    </LinearLayout>
+
+                    <!-- Select boxes directly under faces -->
+                    <RadioGroup
+                        android:id="@+id/color_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/padding_medium"
+                        android:weightSum="5">
+
+                        <RadioButton
+                            android:id="@+id/color_red"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Red"
+                            android:textSize="16sp"
+                            app:buttonTint="@color/accentRed" />
+
+                        <RadioButton
+                            android:id="@+id/color_orange"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Orange"
+                            android:textSize="16sp"
+                            app:buttonTint="@color/accentOrange" />
+
+                        <RadioButton
+                            android:id="@+id/color_green"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Green"
+                            android:checked="true"
+                            android:textSize="16sp"
+                            app:buttonTint="@color/primaryGreen" />
+
+                        <RadioButton
+                            android:id="@+id/color_gray"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Gray"
+                            android:textSize="16sp"
+                            app:buttonTint="@color/gray" />
+
+                        <RadioButton
+                            android:id="@+id/color_blue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Blue"
+                            android:textSize="16sp"
+                            app:buttonTint="@color/accentBlue" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CREATE button (same pill style as Home) -->
+            <Button
+                android:id="@+id/btn_view_battle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:background="@color/accentBlue"
+                android:gravity="center"
+                android:text="@string/home_card4_btn"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/surface_white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+    <!-- <<< end of form -->
+
+    <!-- BOTTOM BAR (leave as-is) -->
+    <include
+        android:id="@+id/bottomBar"
+        layout="@layout/include_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_bar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

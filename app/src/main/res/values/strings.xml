@@ -1,13 +1,84 @@
+<!-- res/values/strings.xml -->
 <resources>
-    <string name="app_name">Java Project Lutemons</string>
-    <string name="lutemon_title">Lutemon</string>
-    <string name="lutemon_subtitle">a student game</string>
+    <string name="app_name">Lutemon — a student game</string>
+
+    <!-- Titles -->
+    <string name="title_home">Home</string>
+    <string name="title_lutedex">Lutedex</string>
+    <string name="title_training">Training Area</string>
+    <string name="title_battlefield">Battle Field</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Splash / Loading -->
+    <string name="splash_title">Lutemon</string>
+    <string name="loading_text">loading …</string>
+
+    <!-- Status chips -->
+    <string name="chip_total_lutemons">You have total of <b>5</b> Lutemons</string>
+    <string name="chip_ready_battle"><b>2</b> ready to battle</string>
+
+    <!-- Home cards -->
+    <string name="home_card1_title">Check your Lutemons</string>
+    <string name="home_card1_sub">View directory of all Lutemons at Lutedex.</string>
+    <string name="home_card1_btn">View Lutedex</string>
+
+    <string name="home_card2_title">Training needed?</string>
+    <string name="home_card2_sub">Your Lutemons need training after the battle…</string>
+    <string name="home_card2_btn">View Training Area</string>
+
+    <string name="home_card3_title">Check out Battle Field</string>
+    <string name="home_card3_sub">You have 2 Lutemons ready to battle…</string>
+    <string name="home_card3_btn">View Battle Field</string>
+    <string name="home_card4_btn">Create Lutemons</string>
+
+    <!-- Lutedex samples -->
+    <string name="lutemon_angy">Angy</string>
+    <string name="lutemon_fighter">Fighter</string>
+    <string name="lutemon_worming">Worming</string>
+    <string name="lutemon_shady">Shady</string>
+    <string name="mini_stats">Main element: %1$s\nAttack: %2$d\nDefense: %3$d\nExp: %4$d</string>
+
+    <!-- Training -->
+    <string name="training_status">Training in progress…</string>
+    <string name="btn_train_selected">Train Selected</string>
+    <string name="btn_choose_potions">Choose Potions</string>
+
+    <!-- Battlefield -->
+    <string name="vs_text">VS</string>
+    <string name="stats_block">HP: %1$d\nAttack: %2$d\nDefense: %3$d\nExp: %4$d</string>
+    <string name="battle_log_sample">Shady attacks Ranger.\nRanger manages to escape death.\n-2 HP for Shady\n+3 HP for Ranger\nAngy uses fire spark.\nCritical hit!\nRanger loses 5 HP.\nBattle continues…</string>
+    <string name="btn_choose_fight">Choose Fight</string>
+    <string name="btn_next_attack">Next Attack</string>
+    <string name="btn_end_battle">End Battle</string>
+
+    <!-- Settings -->
+    <string name="label_sound">Sound Effects</string>
+    <string name="label_notifications">Notifications</string>
+    <string name="btn_close_game">Close Game</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_back">Back</string>
+    <string name="cd_home">Home</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_ball">Lutemon ball</string>
+    <string name="cd_vs">Versus</string>
+    <string name="cd_lutemon_angy">Angy</string>
+    <string name="cd_lutemon_fighter">Fighter</string>
+    <string name="cd_lutemon_worming">Worming</string>
+    <string name="cd_lutemon_shady">Shady</string>
+    <string name="cd_lutemon_ranger">Ranger</string>
+    <string name="cd_lutemon_fire">Fire</string>
+    <string name="cd_lutemon_water">Water</string>
+    <string name="cd_lutemon_earth">Earth</string>
+    <string name="cd_lutemon_wind">Wind</string>
+    <string name="cd_lutemon_poison">Poison</string>
+    <string name="cd_lutemon_lightning">Lightning</string>
+    <string name="cd_lutemon_ice">Ice</string>
+    <string name="cd_lutemon_dark">Dark</string>
+    <string name="cd_lutemon_light">Light</string>
+
+    <!-- Splash -->
     <string name="logo_content_description">Lutemon logo</string>
-    <string name="home_title">Home</string>
-    <string name="lutedex_card_title">Check your Lutemons / View Lutedex</string>
-    <string name="lutedex_card_status">You have total of 5 Lutemons</string>
-    <string name="training_card_title">Training needed?</string>
-    <string name="training_card_status">No Lutemon currently in training</string>
-    <string name="battle_card_title">View Battle Field</string>
-    <string name="battle_card_status">No active battles</string>
+    <string name="splash_content_description">Lutemon logo</string>
+    <string name="title_2">a student game</string>
 </resources>

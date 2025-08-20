@@ -1,0 +1,4 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/lutemon_blue"/>
+    <item android:drawable="@drawable/ic_cute_face" android:gravity="center"/>
+</layer-list>

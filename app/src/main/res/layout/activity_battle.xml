@@ -1,6 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/surface_light">
+
+    <!-- Header pill (your existing style) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/battle_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_normal"
+        android:layout_marginTop="@dimen/padding_normal"
+        app:cardBackgroundColor="@color/primaryGreen"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/title_battlefield"
+            android:textColor="@color/surface_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Scrollable battle content -->
+    <ScrollView
+        android:id="@+id/battle_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/battle_box"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingBottom="@dimen/padding_large">
+
+            <!-- Top row: two fighter cards with VS in middle -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 50% guideline for centering -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/centerGuide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5013193" />
+
+                <!-- VS label -->
+                <TextView
+                    android:id="@+id/txt_vs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vs_text"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/card_right"
+                    app:layout_constraintStart_toStartOf="@id/centerGuide"
+                    app:layout_constraintEnd_toEndOf="@id/centerGuide" />
+
+                <!-- LEFT fighter -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_normal"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="@dimen/radius_large"
+                    app:cardElevation="@dimen/elevation_card"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/centerGuide">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_normal"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="125dp"
+                            android:layout_height="125dp"
+                            android:background="@drawable/lutemon_gray_face"
+                            android:contentDescription="@string/cd_lutemon_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_small"
+                            android:text="lutemon_1"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_small"
+                            android:text="HP: 18/18"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_dark" />
+
+                        <!-- simple green HP bar -->
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="6dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/primaryGreen" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_small"
+                            android:text="ATK: 7  DEF: 2  EXP: 0"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- RIGHT fighter -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_normal"
+                    app:cardBackgroundColor="@color/surface_white"
+                    app:cardCornerRadius="@dimen/radius_large"
+                    app:cardElevation="@dimen/elevation_card"
+                    app:layout_constraintTop_toTopOf="@id/card_left"
+                    app:layout_constraintStart_toEndOf="@id/centerGuide"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_normal"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="125dp"
+                            android:layout_height="125dp"
+                            android:background="@drawable/lutemon_blue_face"
+                            android:contentDescription="@string/cd_lutemon_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_small"
+                            android:text="lutemon_2"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_small"
+                            android:text="HP: 9/16"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_dark" />
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="6dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/primaryGreen" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_small"
+                            android:text="ATK: 9  DEF: 0  EXP: 0"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- battle log card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_normal"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_card">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_normal"
+                    android:text="@string/battle_log_sample"
+                    android:textColor="@color/text_dark"
+                    android:textSize="14sp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- next attack and end battle -->
+            <Button
+                android:id="@+id/btn_next_attack"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:background="@color/accentRed"
+                android:text="@string/btn_next_attack"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textColor="@color/surface_white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_end_battle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:background="@color/accentOrange"
+                android:text="@string/btn_end_battle"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textColor="@color/surface_white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- bottom nav -->
+    <include
+        android:id="@+id/bottomBar"
+        layout="@layout/include_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_bar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
