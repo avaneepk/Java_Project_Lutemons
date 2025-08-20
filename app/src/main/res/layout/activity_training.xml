@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/icon_white">
-    <!-- CARD: Training -->
+
+    <!-- HEADER -->
     <androidx.cardview.widget.CardView
         android:id="@+id/battle_box"
         android:layout_width="match_parent"
@@ -17,23 +19,229 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/title_training"
+            android:textColor="@color/surface_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:id="@+id/training_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/battle_box"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp">
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingBottom="@dimen/padding_large">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- CARD: selected Lutemon summary -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_training"
-                android:textColor="@color/surface_white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:layout_marginBottom="@dimen/padding_normal"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_card">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/padding_normal">
+
+                    <!-- small face -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/lutemon_orange_face"
+                        android:contentDescription="@string/cd_ball" />
+
+                    <!-- name + stats -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/padding_normal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flame"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Orange"
+                            android:textColor="@color/gray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="ATK: 8   DEF: 1   HP: 17/17"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Experience: 3"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- simple 'X' icon placeholder -->
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="✕"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CARD: training panel -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:cardBackgroundColor="@color/surface_white"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- left small gray ball -->
+                    <ImageView
+                        android:id="@+id/left_ball"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/bg_circle_gray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="28dp" />
+
+                    <!-- center face (bigger) -->
+                    <ImageView
+                        android:id="@+id/center_face"
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:src="@drawable/lutemon_orange_face"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/training_status"
+                        android:layout_marginTop="22dp" />
+
+                    <!-- right small gray ball -->
+                    <ImageView
+                        android:id="@+id/right_ball"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/bg_circle_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginEnd="28dp" />
+
+                    <!-- status text -->
+                    <TextView
+                        android:id="@+id/training_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_normal"
+                        android:layout_marginEnd="@dimen/padding_normal"
+                        android:layout_marginBottom="@dimen/padding_normal"
+                        android:gravity="center"
+                        android:text="@string/training_status"
+                        android:textColor="@color/text_dark"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- actions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btn_train_selected"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@color/accentBlue"
+                    android:text="@string/btn_train_selected"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/surface_white"
+                    android:textSize="16sp" />
+
+                <Space
+                    android:layout_width="@dimen/padding_normal"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:id="@+id/btn_choose_potions"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@color/primaryGreen"
+                    android:text="@string/btn_choose_potions"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/surface_white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- success pill -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_normal"
+                app:cardBackgroundColor="@color/primaryGreen"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    android:text="+ 1 Experience"
+                    android:textColor="@color/surface_white"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV -->
     <include
         android:id="@+id/bottomBar"
         layout="@layout/include_bottom_bar"
